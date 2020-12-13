@@ -1,0 +1,136 @@
+body {
+    background-image: linear-gradient(to bottom, black 2%, #17242d 50%);
+    margin: 10px 40px 30px 40px;
+}
+#container {
+    background-image: linear-gradient(to bottom, #2d5872 1%, #17242d 2%, #2d5872 10%, white 35%), url('images/heart.png');
+    background-size: 100%, 60%;
+    background-position: top, center top;
+    background-repeat: no-repeat;
+    background-blend-mode: color;
+    padding: 4%;
+    max-width: 1000px;
+    width: 85%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 1.5em;
+    border: 2px solid black;
+    border-radius: 2%;
+    box-shadow: 2px 4px 3px black;
+    opacity: 0.9;
+}
+#title {
+    margin-top: 35px;
+}
+#title-quote {
+    color: ivory;
+    font-family: serif;
+    font-size: 1.4em;
+    font-style: italic;
+    margin: 0 0 40px 0;
+    text-shadow: 1px 1px 1px black;
+}
+h1 {
+    font-family: serif;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+    font-size: 4em;
+    line-height: 1em;
+    padding: 0;
+    margin: 0.2em;
+}
+h2 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px white;
+    color: #006666;
+}
+
+a:hover {
+    color: purple;
+    font-style: italic;
+}
+#img-div {
+    border-radius: 30px;
+    flex: 40%;
+    background-color: rgba(255,255,255, 0.62);
+    border: 1px #cccccc solid;
+    box-shadow: 0px 3px 6px lightgrey;
+    max-width: 30%;
+    min-width: 200px;
+    margin: 10px auto; 
+    padding: 10px;
+}
+#img-caption {
+    padding: 1.6em;
+    font-size: 0.79em;
+}
+#image {
+    opacity: 1;
+    border-radius: 50%;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    box-shadow: 5px 1px 4px rgba(0,0,0,0.12), 0px 1px 5px rgba(0,0,0,0.50);
+}
+#img-div:hover {
+    transform: scale(1.1);
+}
+#facts-summary {
+    border: 1px #cccccc solid;
+    background-color: white;
+    text-align: left;
+    font-size: 0.87em; 
+    margin: 12px 50px 15px 50px;
+    padding: 20px 30px 30px 30px;
+    line-height: 2.4em;
+    border-radius: 20px;
+    box-shadow: 0px 3px 8px lightgrey;
+    background-image: linear-gradient(to top, lightgrey 0%, white 4%);
+}
+#facts-summary h2 {
+    margin-top: 8px;
+    text-align: center;
+}
+#facts-summary ul {
+    list-style-type: square;
+    list-style-position: inside;
+    padding: 0px;
+    line-height: 1.9em;
+}
+#facts-summary li {
+    padding: 8px 8px 8px 18px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    margin: 4px;
+}
+
+#facts-summary li:hover {
+    opacity: 0.7;
+}
+
+#tribute-info {
+    text-align: left;
+    padding: 2em;
+    margin: 0 auto;
+}
+#trubute-info p {
+    opacity: 0.80;
+}
+#tribute-info h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#main {
+    width: 99%; 
+    margin: 0 auto;
+}
+
+footer {
+    padding: 2em;
+    font-size: 0.9em;
+}

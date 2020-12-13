@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="portfoliostyle.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <div id="logo"><img src="images/grey-ele.png" alt="grey elephant icon" /> Portfolio.</div>
+            <nav id="navbar"><a href="#welcome-section" class="nav-link blue">Home</a><a href="#projects" class="nav-link pink">Projects</a><a href="#contact" class="nav-link green">Contact</a></nav>
+        </header>
+        <div id="container">
+            <main>
+                <div id="welcome-section">
+                    <div id="intro">
+                        <div class="hello-typing">
+                            <h1 class="typing-text">Hello.</h1>
+                        </div>
+                        <div id="intro-para">
+                            <p>I enjoy web development. I am currently updating my skills which include: HTML, CSS, PHP, MYSQL and javascript. If you wish, take a look at my portfolio!</p>
+                            <span class="projects-link"><a href="#projects">View Projects</a></span>
+                        </div>
+                    </div>
+                    <div id="intro-side">
+                        <!--- symbol image from https://pixabay.com/vectors/hexagon-symbol-gui-internet-2307350/ -->
+                        <img src="images/code.png" alt="window showing scripting" />
+                    </div>
+                </div>
+                <div id="projects" class="horiz-section">
+                    <h2>Recent Portfolio</h2>
+                    <p>I have recently worked on some sample pages. You can view them invidiually below.</p>
+                    <div id="project-tiles">
+                        <div class="project-tile">
+                            <figure>
+                                <a href="#"><img src="projects/tribute-page.png" alt="Tribute Page"></a>
+                                <figcaption>Tribute Page</figcaption>
+                            </figure> 
+                        </div>
+                        <div class="project-tile">
+                            <figure>
+                                <a href="#"><img src="projects/survey-form.png" alt="Survey Form"></a>
+                                <figcaption>Survey Form</figcaption>
+                            </figure> 
+                        </div>
+                        <div class="project-tile">
+                            <figure>
+                                <a href="#"><img src="projects/product-page.png" alt="Product Page"></a>
+                                <figcaption>Product Page</figcaption>
+                            </figure> 
+                        </div>
+                        <div class="project-tile">
+                            <figure>
+                                <a href="#"><img src="projects/tech-docs.png" alt="Technical Documentation"></a>
+                                <figcaption>Technical Docs</figcaption>
+                            </figure> 
+                        </div>
+                    </div>
+                    <span class="contact-link"><a href="#contact">View more</a></span>
+                </div>
+                <div id="contact" class="horiz-section">
+                    <h2>contact</h2>
+                    <div id="contact-cols-div">
+                        <div><h3>Email Me</h3>
+                            <form action="#" method="POST">
+                                <div class="form-section"><label for="name">Name:</label><input type="text" name="name" id="name" placeholder="Your name" required/></div>
+                                <div class="form-section"><label for="email">Email:</label><input type="email" name="email" id="email" placeholder="Your Email Address" required/></div>
+                                <div class="form-section"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+                                <div class="form-section"><button type="submit" id="submit">Send</button></div>
+                            </form></div>
+                        <div>
+                            <h3>Social Media</h3>
+                            <div id="socia-list">
+                                <a href="https://www.freecodecamp.org/fcc2b003d11-5869-4993-b423-3d9a9c169298" target="_blank" id="profile-link"><img src="icons/github.png" alt="github profile"/></a>
+                                <a href="#"><img src="icons/twitter.png" alt="twitter profile"/></a>
+                                <a href="#"><img src="icons/facebook.png" alt="facebook profile"/></a>
+                                <a href="#"><img src="icons/linkedin.png" alt="linkedin profile"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="horiz-section"><p>Made by me. Icons &amp; images retain copyright by the respective owners.</p>
+                <p>Disclaimer: This website is a demo only and not to be used in a live enviroment.</p></footer>
+        </div>
+    </body>
+</html>

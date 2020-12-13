@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Survey Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="surveystyle.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Otter Stream Survey</h1>
+            <p id="description">Let us know about your sea otter live stream experience!</p>
+        </header>
+        <div id="container">
+            <main id="main">
+                <form id="survey-form">
+                    <h2 class="subheading">Personal Details</h2>
+                    <div class="form-section-pd">
+                        <label id="name-label" for="name" class="question-text">Name*:</label>
+                        <input type="text" id="name" placeholder="Enter your name (required)" required />
+                    </div>
+                    <div class="form-section-pd">
+                        <label id="email-label" for="email" class="question-text">Email*:</label>
+                        <input type="email" id="email" placeholder="Enter a valid email address (required)" required />
+                    </div>
+                    <div class="form-section-pd">
+                        <label id="number-label" for="number" class="question-text">Age:</label>
+                        <input type="number" id="number" min="4" max="130" placeholder="Age 4-130 (optional)" />
+                    </div>
+                    <h2 class="subheading">Your experience</h2>
+                    <div class="form-section">
+                        <label for="dropdown" class="question-text">Where did you find out about the otter live stream?</label>
+                        <select id="dropdown">
+                            <option value="" disabled selected>-----Select an Option-----</option>
+                            <option value="youtube">Aquarium Website</option>
+                            <option value="twitch">Google</option>
+                            <option value="periscope">News Article</option>
+                            <option value="tv">Social Media</option>
+                            <option value="tv">Friend</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-section">
+                        <p class="question-text">Do you feel you learned a lot about otters from our live stream?</p>
+                        <input type="radio" id="learned-yes" name="learned" value="yes">
+                        <label for="learned-yes">Yes</label><br>
+                        <input type="radio" id="learned-no" name="learned" value="no">
+                        <label for="learned-no">No</label><br>
+                        <input type="radio" id="learned-unsure" name="learned" value="notsure">
+                        <label for="learned-unsure">Not sure</label>
+                    </div>
+                    <div class="form-section">
+                        <p class="question-text">Where did you watch our live stream? (check all that apply)</p>
+                        <input type="checkbox" id="platform1" name="platform1" value="youtube">
+                        <label for="platform1">Youtube</label><br>
+                        <input type="checkbox" id="platform2" name="platform2" value="twitch">
+                        <label for="platform2">Twitch</label><br>
+                        <input type="checkbox" id="platform3" name="platform3" value="periscope">
+                        <label for="platform3">Periscope</label><br>
+                    </div>
+
+                    <div class="form-section">
+                        <label for="comments" class="question-text">Additional comments about your experience:</label>
+                        <textarea id="comments" placeholder="Add any comments here..."></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" id="submit" class="button">Submit</button>
+                    </div>
+                </form>
+
+            </main>
+            <footer>
+                <p>Please view our <a href="#" target="_blank" id="privacy-link">privacy policy</a>.</p>
+            </footer>
+        </div>
+    </body>
+</html>

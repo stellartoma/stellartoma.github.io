@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PHP Technical Documentation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="docsstyle.css">
+    </head>
+    <body>
+        <div id="container">
+            <nav id="navbar">
+                <header>
+                    <h1>PHP Basics</h1>
+                </header>
+                <ul>
+                    <li><a href="#basic_syntax" class="nav-link">Basic Syntax</a>
+                    </li>
+                    <li><a href="#types" class="nav-link">Types</a>
+                    </li>
+                    <li><a href="#variables" class="nav-link">Variables</a>
+                    </li>
+                    <li><a href="#constants" class="nav-link">Constants</a></li>
+                    <li><a href="#expressions" class="nav-link">Expressions</a></li>
+                    <li><a href="#operators" class="nav-link">Operators</a></li>
+                    <li><a href="#control_structures" class="nav-link">Control Structures</a>
+                    </li>
+                    <li><a href="#functions" class="nav-link">Functions</a>
+                    </li>
+                </ul>
+            </nav>
+            <main id="main-doc">
+                <section class="main-section" id="basic_syntax">
+                    <header>
+                        <h1>Basic Syntax</h1>
+                    </header>
+                    <h2 id="php_tags">PHP Tags</h2>
+                    <p> 
+                        When PHP parses a file, it looks for opening and closing tags, which are
+                        &lt;?php and ?&gt; which tell PHP to
+                        start and stop interpreting the code between them. Parsing in this manner
+                        allows PHP to be embedded in all sorts of different documents, as
+                        everything outside of a pair of opening and closing tags is ignored by the
+                        PHP parser.
+                    </p>
+                    <h2 id="escaping_from_html">Escaping from HTML</h2>
+                    <p>
+                        Everything outside of a pair of opening and closing tags is ignored by the PHP parser which allows PHP files to have mixed content. This allows PHP to be embedded in HTML documents, for example to create templates.
+                    </p>
+                    <div class="codeblock">
+                        <code>&lt;p&gt;This is going to be ignored by PHP and displayed by the browser.&lt;/p&gt;
+                        &lt;?php echo 'While this is going to be parsed.'; ?&gt;
+                        &lt;p&gt;This will also be ignored by PHP and displayed by the browser.&lt;/p&gt;</code> 
+                    </div>
+
+                    <h2 id="instruction_separation">Instruction Separation</h2>
+
+                    <p>
+                        As in C or Perl, PHP requires instructions to be terminated with a semicolon at the end of each statement. The closing tag of a block of PHP code automatically implies a semicolon; you do not need to have a semicolon terminating the last line of a PHP block. The closing tag for the block will include the immediately trailing newline if one is present.
+                    </p>
+                    <h3>Example #1 Example showing the closing tag encompasing the trailing newline</h3>
+                    <div class="codeblock">
+                        <code>&lt;?php echo "Some text"; ?&gt;</code>
+                        <code>No newline</code>
+                        <code>&lt;?= "But newline now" ?&gt;</code> 
+                    </div>
+                    <h2 id="comments">Comments</h2>
+                    <p>
+                        PHP supports 'C', 'C++' and Unix shell-style (Perl style) comments. For example:
+                    </p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        echo 'This is a test'; // This is a one-line c++ style comment
+                        /* This is a multi line comment
+                        yet another line of comment */
+                        echo 'This is yet another test';
+                        echo 'One Final Test'; # This is a one-line shell-style comment
+                        ?&gt;</code>
+                    </div>
+                </section>
+                <section class="main-section" id="types">
+                    <header>
+                        <h1>Types</h1>
+                    </header>
+                    <p>This is the simplest type. A bool expresses a truth value. It can be either <code>TRUE</code> or <code>FALSE</code>.</p>
+                    <h2 id="booleans">Booleans</h2>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        $foo = True; // assign the value TRUE to &dollar;foo
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="integers">Integers</h2>
+                    <p>ints can be specified in decimal (base 10), hexadecimal (base 16), octal (base 8) or binary (base 2) notation. The negation operator can be used to denote a negative int.
+
+                        To use octal notation, precede the number with a 0 (zero). To use hexadecimal notation precede the number with 0x. To use binary notation precede the number with 0b.
+
+                        As of PHP 7.4.0, integer literals may contain underscores (_) between digits, for better readability of literals. These underscores are removed by PHP's scanner.
+                    </p>
+                    <h3>Example #1 Integer literals</h3>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        &dollar;a = 1234; // decimal number
+                        &dollar;a = 0123; // octal number (equivalent to 83 decimal)
+                        &dollar;a = 0x1A; // hexadecimal number (equivalent to 26 decimal)
+                        &dollar;a = 0b11111111; // binary number (equivalent to 255 decimal)
+                        &dollar;a = 1_234_567; // decimal number (as of PHP 7.4.0)
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="floating_point_numbers">Floating Point Numbers</h2>
+                    <p>
+                        Floating point numbers (also known as &quot;floats&quot;, &quot;doubles&quot;, or &quot;real numbers&quot;) can be specified using any of the following syntaxes:
+                    </p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        &dollar;a = 1.234;
+                        &dollar;b = 1.2e3;
+                        &dollar;c = 7E-10;
+                        &dollar;d = 1_234.567; // as of PHP 7.4.0
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="strings">Strings</h2>
+                    <p>
+                        A string is series of characters, where a character is the same as a byte. This means that PHP only supports a 256-character set, and hence does not offer native Unicode support.
+                    </p>
+                    <h2 id="arrays">Arrays</h2>
+                    <p>
+                        An array in PHP is actually an ordered map. A map is a type that associates values to keys. This type is optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+                    </p>
+                    <h3>Example #1 A simple array</h3>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        $array = array(
+                        &quot;foo&quot; =&gt; &quot;bar&quot;,
+                        &quot;bar&quot; =&gt; &quot;foo&quot;,
+                        );
+                        // Using the short array syntax
+                        $array = [
+                        &quot;foo&quot; =&gt; &quot;bar&quot;,
+                        &quot;bar&quot; =&gt; &quot;foo&quot;,
+                        ];
+                        ?&gt;</code>
+                    </div>
+                </section>
+                <section class="main-section" id="variables">
+                    <header>
+                        <h1>Variables</h1>
+                    </header>
+                    <p>
+                        Variables in PHP are represented by a dollar sign followed by the name of the variable. The variable name is case-sensitive.
+                        Variable names follow the same rules as other labels in PHP. A valid variable name starts with a letter or underscore, followed by any number of letters, numbers, or underscores. As a regular expression, it would be expressed thus: 
+                    </p>
+                    <div class="codeblock">
+                        <code>^[a-zA-Z_x80-xff][a-zA-Z0-9_x80-xff]*$</code>
+                    </div>
+                    <h3>Variable Examples:</h3>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        &dollar;var = 'Bob';
+                        &dollar;Var = 'Joe';
+                        echo &quot;$var, $Var&quot;;      // outputs &quot;Bob, Joe&quot;
+
+                        &dollar;4site = 'not yet';     // invalid; starts with a number
+                        &dollar;_4site = 'not yet';    // valid; starts with an underscore
+                        $t&auml;yte = 'mansikka';    // valid; '&auml;' is (Extended) ASCII 228.
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="variable_scope">Variable Scope</h2>
+                    <p>
+                        The scope of a variable is the context within which it is defined. For the most part all PHP variables only have a single scope. This single scope spans included and required files as well. For example:
+                    </p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        &dollar;a = 1;
+                        include 'b.inc';
+                        ?&gt;</code>
+                    </div>
+                    <p>
+                        Here the &dollar;a variable will be available within the included b.inc script. However, within user-defined functions a local function scope is introduced. Any variable used inside a function is by default limited to the local function scope. For example:
+                    </p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        &dollar;a = 1; /* global scope */
+
+                        function test()
+                        {
+                        echo $a; /* reference to local scope variable */
+                        }
+                        test();
+                        ?&gt;</code>
+                    </div>
+
+                </section>
+                <section class="main-section" id="constants">
+                    <header>
+                        <h1>Constants</h1>
+                    </header>
+                    <p>
+                        Constants can be defined using the const keyword, or by using the define()-function. While <code>define()</code> allows a constant to be defined to an arbitrary expression, the const keyword has restrictions as outlined in the next paragraph. Once a constant is defined, it can never be changed or undefined.
+                    </p>
+                    <p>
+                        When using the <code>const</code> keyword, only scalar (<code>bool</code>, <code>int</code>, <code>float</code> and <code>string</code>) expressions and constant arrays containing only scalar expressions are accepted. It is possible to define constants as a resource, but it should be avoided, as it can cause unexpected results.
+                    </p>
+                    <p>
+                        The value of a constant is accessed simply by specifying its name. Unlike variables, a constant is not prepended with a $. It is also possible to use the <code>constant()</code> function to read a constant's value if the constant's name is obtainned dynamically. Use <code>get_defined_constants()</code> to get a list of all defined constants.
+                    </p>
+                    <h2 id="magic_constants">Magic Constants</h2>
+                    <p>
+                        PHP provides a large number of predefined constants to any script which it runs. Many of these constants, however, are created by various extensions, and will only be present when those extensions are available, either via dynamic loading or because they have been compiled in.
+                    </p>
+                </section>
+                <section class="main-section" id="expressions">
+                    <header>
+                        <h1>Expressions</h1>
+                    </header>
+                    <p>
+                        Expressions are the most important building blocks of PHP. In PHP, almost anything you write is an expression. The simplest yet most accurate way to define an expression is &quot;anything that has a value&quot;.
+                    </p>
+                    <p>
+                        The most basic forms of expressions are constants and variables. When you type <code>&quot;$a = 5&quot;</code>, you're assigning '5' into <code>$a</code>. '5', obviously, has the value 5, or in other words '5' is an expression with the value of 5 (in this case, '5' is an integer constant).
+                    </p>
+                    <p>Slightly more complex examples for expressions are functions. For instance, consider the following function:</p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        function foo ()
+
+                        return 5;
+                        }
+                        ?&gt;</code>
+                    </div>
+                </section>
+                <section class="main-section" id="operators">
+                    <header>
+                        <h1>Operators</h1>
+                    </header>
+                    <p>
+                        An operator is something that takes one or more values (or expressions, in programming jargon) and yields another value (so that the construction itself becomes an expression).
+                    </p>
+                    <p>
+                        Operators can be grouped according to the number of values they take. Unary operators take only one value, for example ! (the logical not operator) or ++ (the increment operator). Binary operators take two values, such as the familiar arithmetical operators + (plus) and - (minus), and the majority of PHP operators fall into this category. Finally, there is a single ternary operator, ? :, which takes three values; this is usually referred to simply as &quot;the ternary operator&quot; (although it could perhaps more properly be called the conditional operator).
+                    </p>
+                </section>
+                <section class="main-section" id="control_structures">
+                    <header>
+                        <h1>Control Structures</h1>
+                    </header>
+                    <p>
+                        Any PHP script is built out of a series of statements. A statement can be an assignment, a function call, a loop, a conditional statement or even a statement that does nothing (an empty statement). Statements usually end with a semicolon. In addition, statements can be grouped into a statement-group by encapsulating a group of statements with curly braces. A statement-group is a statement by itself as well.
+                    </p>
+                    <h2 id="if">if</h2>
+                    <p>
+                        The if construct is one of the most important features of many languages, PHP included. It allows for conditional execution of code fragments
+                    </p>
+                    <p>The following example would display a is bigger than b if <code>$a</code> is bigger than <code>$b</code>:</p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        if (&dollar;a &gt; $b)
+                        echo &quot;a is bigger than b&quot;;
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="else">else</h2>
+                    <p>
+                        Often you'd want to execute a statement if a certain condition is met, and a different statement if the condition is not met. This is what else is for. else extends an if statement to execute a statement in case the expression in the if statement evaluates to FALSE.
+                    </p>
+                    <h3>Example:</h3>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        if (&dollar;a &gt; &dollar;b) {
+                        echo &quot;a is greater than b&quot;;
+                        } else {
+                        echo &quot;a is NOT greater than b&quot;;
+                        }
+                        ?&gt;</code>
+                    </div>
+                    <h3>Other Control Structures</h3>
+                    <p>
+                        There are a number of other types of control structures within the PHP coding language:
+                    </p>
+                    <ul>
+                        <li><code>elseif/else if</code>: for use when you wish to have a conditional <code>ELSE</code> statement</li>
+                        <li><code>while</code>: loops though items while a condition is <code>TRUE</code></li>
+                        <li><code>do-while</code>: truth expression is checked at the end of each iteration instead of in the beginning</li>
+                        <li><code>for</code>: for loops are the most complex loops in PHP. They behave like their C counterparts</li>
+                        <li><code>foreach</code>: The <code>foreach</code> construct provides an easy way to iterate over arrays. </li>
+                        <li><code>switch</code>: The <code>switch</code> statement is similar to a series of <code>IF</code> statements on the same expression</li>
+                        <li><code>return</code>: return returns program control to the calling module.</li>
+                    </ul>
+                </section>
+                <section class="main-section" id="functions">
+                    <header>
+                        <h1>Functions</h1>
+                    </header>
+                    <h2 id="user_defined_functions">User-Defined Functions</h2>
+                    <p>A function may be defined using syntax such as the following:</p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        function foo($arg_1, $arg_2, /* ..., */ $arg_n)
+                        {
+                        echo &quot;Example function.n&quot;;
+                        return $retval;
+                        }
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="function_arguments">Function Arguments</h2>
+                    <p>
+                        Information may be passed to functions via the argument list, which is a comma-delimited list of expressions. The arguments are evaluated from left to right.
+                    </p>
+                    <p>
+                        PHP supports passing arguments by value (the default), passing by reference, and default argument values. Variable-length argument lists are also supported.
+                    </p>
+                    <h3>Example: Passing array to functions</h3>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        function foo(&dollar;arg_1, &dollar;arg_2, /* ..., */ &dollar;arg_n)
+                        {
+                        echo &quot;Example function.n&quot;;
+                        return &dollar;retval;
+                        }
+                        ?&gt;</code>
+                    </div>
+                    <h2 id="returning_values">Returning Values</h2>
+                    <p>
+                        Values are returned by using the optional return statement. Any type may be returned, including arrays and objects. This causes the function to end its execution immediately and pass control back to the line from which it was called. 
+                    </p>
+                    <div class="codeblock">
+                        <code>&lt;?php
+                        function square($num)
+                        {
+                        return $num * $num;
+                        }
+                        echo square(4);   // outputs '16'.
+                        ?&gt;</code>
+                    </div>
+                </section>
+                <!--- should replace with the <footer> element below the <main> later -->
+                <div id="footer">Information from PHP docs. View more at the <a href="https://www.php.net/docs.php" target="_blank">PHP Docs website</a></div>
+            </main>
+        </div>
+    </body>
+</html>
