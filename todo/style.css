@@ -1,0 +1,142 @@
+body {
+  font-size: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+}
+label {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+li {
+  padding: 0.3em;
+  border-bottom: 1px solid rgb(150, 212, 233);
+  color: rgb(65, 71, 78);
+  font-size: large;
+  border-left: 5px solid rgb(230, 155, 211);
+}
+
+ul {
+  /* border: 1px solid #c8dcf3; */
+  border-radius: 10px;
+}
+.done-checkbox {
+  accent-color: rgb(83, 136, 233);
+  height: 1.4em;
+  width: 1.4em;
+}
+
+button,
+input {
+  border: 2px solid rgb(200, 220, 243);
+  padding: 0.3em;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+}
+
+#new-task-title {
+  position: relative;
+  width: 70%;
+  padding: 5px 5px;
+}
+
+#todo {
+  width: 90%;
+  max-width: 800px;
+  min-height: 10vh;
+  padding: 1em;
+  background: linear-gradient(-45deg, #ffffff 0%, #d4e4ff 100%);
+  border-radius: 15px;
+  border-color: rgb(245, 226, 226);
+  margin: 2em auto;
+  box-shadow: 0 4px 8px 0 rgba(24, 23, 44, 0.2),
+    0 6px 20px 0 rgba(38, 64, 136, 0.19);
+}
+
+#todo-btn {
+  float: right;
+  width: 14%;
+  border-radius: 5px;
+  color: gray;
+  padding: 0.4em;
+}
+
+#list {
+  list-style: none;
+  padding: 0.9em;
+}
+
+#delete-btn {
+  margin-left: 15px;
+  padding: 0;
+  height: 19px;
+  width: 19px;
+  font-size: 0.7em;
+  float: right;
+  border-radius: 5px;
+}
+
+#new-task-form {
+  padding: 1em;
+}
+
+.completed_txt {
+  text-decoration: line-through;
+  font-size: normal;
+  font-style: italic;
+  color: rgb(136, 135, 135);
+}
+
+.completed_item {
+  background: white;
+  opacity: 0.4;
+  border-left: 5px solid rgb(78, 163, 135);
+}
+.non_completed_item {
+  border-left: 3px solid red;
+}
+.tasks_completed_bg {
+  background-image: url("https://oshi.at/TBzC/aGdD.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+}
+#message {
+  text-align: center;
+  font-size: 1em;
+}
+
+#delete-all-btn {
+  float: left;
+  text-align: center;
+  width: 6%;
+  margin: 5px 2px;
+  padding: 3px;
+  color: rgb(46, 38, 44);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#start-date {
+  font-size: small;
+  text-align: center;
+  color: rgb(58, 58, 58);
+}
+
+#end-date {
+  font-size: x-small;
+  text-align: center;
+  color: grey;
+}
+
+.hide {
+  visibility: hidden;
+}
