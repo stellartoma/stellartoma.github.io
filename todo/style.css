@@ -116,7 +116,7 @@ h1 {
 }
 
 .tasks_completed_bg {
-  background-image: url("/images/celebration2.png");
+  background-image: url("images/celebration2.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
