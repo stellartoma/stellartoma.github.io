@@ -125,7 +125,7 @@ h1 {
 }
 
 .tasks_completed_bg {
-  background-image: url("/images/bee_bg.png");
+  background-image: url("images/bee_bg.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
